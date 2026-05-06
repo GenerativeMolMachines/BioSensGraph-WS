@@ -1,0 +1,4 @@
+name: interacts_with
+lhs: molecules
+rhs: molecules
+operator: ${operator}

@@ -1,0 +1,7 @@
+workers: 5
+config_path: pbg_configs/import_from_tsv.py
+train_path: resources/train.tsv
+test_path: resources/test.tsv
+lhs_col: 0
+rel_col: 1
+rhs_col: 2

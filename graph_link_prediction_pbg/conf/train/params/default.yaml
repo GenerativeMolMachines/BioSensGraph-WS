@@ -1,0 +1,8 @@
+num_epochs: 30
+num_edge_chunks: 16
+batch_size: 1000
+num_batch_negs: 50
+num_uniform_negs: 100
+lr: 0.01
+loss_fn: "ranking"
+margin: 0.1

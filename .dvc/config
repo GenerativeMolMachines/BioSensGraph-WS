@@ -1,0 +1,6 @@
+[core]
+    remote = public-remote
+    autostage = true
+['remote "public-remote"']
+    url = s3://
+    endpointurl =

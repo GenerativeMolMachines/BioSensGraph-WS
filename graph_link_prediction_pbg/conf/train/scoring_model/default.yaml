@@ -1,0 +1,6 @@
+dimension: 400
+comparator: 
+  - cos
+  - dot
+  - l2
+  - squared_l2

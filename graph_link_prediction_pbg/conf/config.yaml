@@ -1,0 +1,22 @@
+defaults:
+  - edge_paths: partitioned 
+  - entities: molecules
+  - import_data: default
+  - train: baseline
+  - _self_
+
+entity_path: data/partitions
+
+# Operator for DVC file naming (all relations use the same operator)
+operator: diagonal
+
+# Define relations as a list directly (Hydra doesn't support multiple defaults easily)
+relations:
+  - name: interacts_with
+    lhs: molecules
+    rhs: molecules
+    operator: ${operator}
+  - name: has_similarity
+    lhs: molecules
+    rhs: molecules
+    operator: ${operator}

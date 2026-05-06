@@ -1,0 +1,5 @@
+name: has_similarity
+lhs: molecules
+rhs: molecules
+operator: ${operator}
+

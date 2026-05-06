@@ -1,0 +1,51 @@
+edge_paths:
+  train: data/partitions/train_partitioned
+  test: data/partitions/test_partitioned
+entities:
+  molecules:
+    num_partitions: 1
+import_data:
+  workers: 5
+  config_path: pbg_configs/import_from_tsv.py
+  train_path: resources/train.tsv
+  test_path: resources/test.tsv
+  lhs_col: 0
+  rel_col: 1
+  rhs_col: 2
+train:
+  scoring_model:
+    dimension: 400
+    comparator:
+    - cos
+    - dot
+    - l2
+    - squared_l2
+  params:
+    num_epochs: 30
+    num_edge_chunks: 16
+    batch_size: 1000
+    num_batch_negs: 50
+    num_uniform_negs: 100
+    lr: 0.01
+    loss_fn: ranking
+    margin: 0.1
+  config_path: pbg_configs/train.py
+  checkpoint_path: results/checkpoints
+  checkpoint_preservation_interval: 1
+  global_emb: true
+  init_scale: 0.001
+  bucket_order: inside_out
+  workers: 120
+  eval_fraction: 0.0
+  verbose: 1
+entity_path: data/partitions
+operator: complex_diagonal
+relations:
+- name: interacts_with
+  lhs: molecules
+  rhs: molecules
+  operator: complex_diagonal
+- name: has_similarity
+  lhs: molecules
+  rhs: molecules
+  operator: complex_diagonal

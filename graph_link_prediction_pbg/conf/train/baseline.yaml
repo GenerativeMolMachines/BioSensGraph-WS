@@ -1,0 +1,14 @@
+defaults:
+  - scoring_model: default
+  - params: default
+
+config_path: "pbg_configs/train.py"
+checkpoint_path: "results/checkpoints"
+checkpoint_preservation_interval: 1
+global_emb: true
+init_scale: 0.001
+
+bucket_order: "inside_out"
+workers: 10
+eval_fraction: 0.0
+verbose: 1

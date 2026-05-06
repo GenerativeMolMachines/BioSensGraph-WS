@@ -1,0 +1,36 @@
+{
+    'edge_paths': {
+        'train': 'train_partitioned', 
+        'test': 'test_partitioned'
+    }, 
+    'entities': {
+        'molecules': {'num_partitions': 1}
+    }, 
+    'relations': {
+        'name': 'IW',
+        'lhs': 'molecules',
+        'rhs': 'molecules',
+        'operator': 'diagonal'
+    },
+    'import_data': {'workers': 5}, 
+    'train': {
+        'scoring_model': {
+            'dimensions': 400,
+            'comparator': 'cos',
+            'global_emb': True,
+            'init_scale': 0.001
+        }, 
+        'checkpoint_preservation_interval': 1,
+        'num_epochs': 5, 'num_edge_chunks': 16, 
+        'batch_size': 1000,
+        'bucket_order': 'inside_out', 
+        'workers': 10,
+        'num_batch_negs': 50, 
+        'num_uniform_negs': 100, 
+        'loss_fn': 'ranking',
+        'lr': 0.01,
+        'eval_fraction': 0.0,
+        'verbose': 1
+    }, 
+    'entity_path': 'data/partitions'
+}

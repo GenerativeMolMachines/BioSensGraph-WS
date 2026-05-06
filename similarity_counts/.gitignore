@@ -1,0 +1,38 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# data
+data/
+*.out
+*.h5
+*.npz
+*.npy
+
+.cursor
+
+test_emb.ipynb
+eda_data.ipynb
+
+similarity_protein/preprocessing.ipynb
+similarity_dna_rna/preprocessing.ipynb
+similarity_small_molecule/preprocessing.ipynb
+indexing/preprocessin.ipynb
+similarity_protein/indexing/run.ipynb
+*.index
+*.npy
+*.h5
+*.npz
+*.out
+*.csv
+*.tsv
+*.txt
+
+similarity_peptide/preprocessing.ipynb

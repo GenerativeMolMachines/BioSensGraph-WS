@@ -1,0 +1,6 @@
+[core]
+    remote = public-remote
+[hydra]
+    enabled = True
+['remote "public-remote"']
+    url = s3://
