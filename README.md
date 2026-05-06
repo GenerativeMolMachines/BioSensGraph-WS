@@ -33,7 +33,7 @@ This repository is organized as a modular workflow. Each module has a specific r
 - Partitioned training, checkpointing, and metric evaluation.
 - Provides reproducible training workflows with DVC and SLURM/local execution options.
 
-### 5) Relation Augmentation Module (`similarity_counts/`)
+### 4) Relation Augmentation Module (`similarity_counts/`)
 
 - Builds additional similarity-based edges (sequence/structure similarity) used to enrich graph connectivity.
 - Produces augmentation links.
